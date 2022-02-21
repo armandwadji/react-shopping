@@ -1,0 +1,113 @@
+.article {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px auto;
+
+  .article-container {
+    // border: 1px solid black;
+    position: relative;
+    margin-bottom: 20px;
+    // width: calc(100% / 1 - 10px);
+
+    h3 {
+      padding-left: 50px;
+      padding-bottom: 20px;
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+
+    img {
+      cursor: pointer;
+      border: 1px solid #e6e6e610;
+      border-radius: 15px;
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      transition: transform 0.2s ease-in-out, opacity 0.1s ease-in;
+
+      @media (max-width: 1600px) {
+        margin: auto 60px;
+      }
+    }
+
+    p {
+      padding: 5px;
+      position: absolute;
+      top: 40px;
+      right: 55px;
+      transform: scaleY(0);
+      transform-origin: center top;
+      transition: transform 0.2s ease-in-out;
+      background-color: $color-1;
+      border-radius: 5px;
+      color: $color-5;
+    }
+
+    &__addminus {
+      width: 50%;
+      transform: translateX(50%);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      input {
+        display: none;
+
+        &:checked + label i {
+          color: $color-1;
+          animation: heart 0.8s forwards ease;
+
+          @keyframes heart {
+            0% {
+              filter: hue-rotate(0deg);
+              transform: scale(1);
+            }
+            50% {
+              filter: hue-rotate(-270deg);
+              transform: scale(1.2);
+            }
+            100% {
+              filter: hue-rotate(0deg);
+              transform: scale(1);
+            }
+          }
+        }
+      }
+
+      :is(p, i) {
+        padding: 0px 10px;
+      }
+
+      i {
+        transition: 0.3s ease;
+        font-size: 1.5em;
+
+        &:hover {
+          color: $color-1;
+          cursor: pointer;
+          transform: scale(1.2);
+        }
+      }
+
+      .quantity {
+        font-size: 1.2em;
+        font-weight: 500;
+        padding-top: 2px;
+      }
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+        opacity: 0.9;
+      }
+
+      p {
+        transform: scaleY(1);
+      }
+    }
+  }
+}

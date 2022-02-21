@@ -1,0 +1,57 @@
+.cube-container {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 100px auto 0;
+  transform: scale(0.55);
+  margin-top: -5px;
+  margin-bottom: 10px;
+
+  .cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 10s infinite linear;
+
+    .face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+    }
+
+    .top {
+      background: $gradient;
+      transform: rotateX(90deg) translateZ(100px);
+    }
+    .bottom {
+      background: $gradient;
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+    .rigth {
+      background: $gradient;
+      transform: rotateY(90deg) translateZ(100px);
+    }
+    .left {
+      background: $gradient;
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+    .front {
+      background: $gradient;
+      transform: rotateX(0deg) translateZ(100px);
+    }
+    .back {
+      background: $gradient;
+      transform: rotateX(-180deg) translateZ(100px);
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}

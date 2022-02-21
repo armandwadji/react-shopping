@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
+
+$color-1: #e50010;
+$color-2: hsla(348, 91%, 29%, 1);
+$color-3: gray;
+$color-4: antiquewhite;
+$gradient: linear-gradient(135deg, $color-2 0%, hsla(16, 80%, 65%, 1) 100%);
+$color-5: white;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  max-width: 80%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.6em;
+  color: #282727;
+  text-shadow: 3px 2px 0px rgba(36, 6, 6, 0.13), 5px 4px 0px $color-5;
+  width: 100%;
+  margin: 30px auto;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 1.05em;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}

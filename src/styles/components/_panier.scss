@@ -1,0 +1,105 @@
+.btn {
+  color: $color-1;
+  background-color: white;
+  text-decoration: none;
+  position: relative;
+  text-transform: uppercase;
+  padding: 10px;
+  margin: -10px auto 40px auto;
+  letter-spacing: 4px;
+  transition: 0.5s all;
+  overflow: hidden;
+  border: none;
+  border-radius: 5px;
+  transform: scale(0.8);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-1;
+    color: #faf9f8;
+    transform: scale(0.9);
+  }
+
+  span {
+    position: absolute;
+
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, $color-1);
+      animation: animate1 1s linear infinite;
+
+      @keyframes animate1 {
+        0% {
+          left: -100%;
+        }
+        50%,
+        100% {
+          left: 100%;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, $color-1);
+      animation: animate2 1s linear infinite;
+      animation-delay: 0.25s;
+
+      @keyframes animate2 {
+        0% {
+          top: -100%;
+        }
+        50%,
+        100% {
+          top: 100%;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, $color-1);
+      animation: animate3 1s linear infinite;
+      animation-delay: 0.5s;
+
+      @keyframes animate3 {
+        0% {
+          right: -100%;
+        }
+        50%,
+        100% {
+          right: 100%;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, $color-1);
+      animation: animate4 1s linear infinite;
+      animation-delay: 0.75s;
+
+      @keyframes animate4 {
+        0% {
+          bottom: -100%;
+        }
+        50%,
+        100% {
+          bottom: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "user": [
+    {
+      "pic": "https://i.postimg.cc/brQQnRbF/MG-8380-Modifier.jpg",
+      "name": "Armand WADJI",
+      "job": "Developpeur Web ",
+      "comment": "Développeur d'application Web et mobile autodidacte",
+      "id": "1"
+    }
+  ],
+  "panier": [
+    {
+      "Facture": [
+        {
+          "name": " Browtop",
+          "price": 19.99,
+          "id": "1",
+          "pic": "https://i.postimg.cc/mzb4RDmB/haut.jpg",
+          "amount": 3
+        }
+      ],
+      "total": "59.97",
+      "id": 1
+    }
+  ]
+}

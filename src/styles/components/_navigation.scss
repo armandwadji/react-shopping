@@ -1,0 +1,114 @@
+.navigation {
+  position: relative;
+  max-width: 800px;
+  width: 80%;
+  height: 70px;
+  background: $color-4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  margin: 50px auto 30px;
+
+  li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+
+    .a {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
+      transition: 0.5s;
+
+      .icon {
+        position: relative;
+        display: block;
+        line-height: 75px;
+        font-size: 2em;
+        text-align: center;
+        color: $color-3;
+        transition: 0.5s;
+      }
+      .text {
+        position: absolute;
+        color: $color-3;
+        font-weight: 400;
+        font-size: 1.2em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      &.active {
+        position: absolute;
+        top: -50%;
+        width: 70px;
+        height: 70px;
+        background: $color-2;
+        border-radius: 50%;
+        border: 6px solid $color-5;
+        transition: 0.5s;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 40%;
+          left: -24px;
+          width: 20px;
+          height: 20px;
+          background: transparent;
+          border-top-right-radius: 25px;
+          box-shadow: 1px -10px 0 0 $color-5;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 40%;
+          right: -24px;
+          width: 20px;
+          height: 20px;
+          background: transparent;
+          border-top-left-radius: 25px;
+          box-shadow: -1px -10px 0 0 $color-5;
+        }
+      }
+
+      &.active .text {
+        opacity: 1;
+        transform: translateY(50px);
+      }
+      &.active .icon {
+        color: $color-5;
+      }
+
+      .heart {
+        visibility: hidden;
+        &::before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          background-color: $color-1;
+          border-radius: 50%;
+          position: absolute;
+          top: 17px;
+          right: 15px;
+          z-index: 10;
+        }
+
+        &.visible {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
