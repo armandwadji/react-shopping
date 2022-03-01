@@ -90,25 +90,22 @@
       &.active .icon {
         color: $color-5;
       }
+    }
 
-      .heart {
-        visibility: hidden;
-        &::before {
-          content: "";
-          width: 10px;
-          height: 10px;
-          background-color: $color-1;
-          border-radius: 50%;
-          position: absolute;
-          top: 17px;
-          right: 15px;
-          z-index: 10;
-        }
-
-        &.visible {
-          visibility: visible;
-        }
-      }
+    .heart {
+      position: absolute;
+      top: 0;
+      right: -10px;
+      height: 5px;
+      width: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      background-color: $color-2;
+      padding: 10px;
+      border-radius: 50%;
+      color: $color-5;
     }
   }
 }

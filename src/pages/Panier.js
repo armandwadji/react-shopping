@@ -3,20 +3,17 @@ import Logo from "../components/Logo";
 import Navigation from "../components/Navigation";
 import Article from "../components/Article";
 import axios from "axios";
+import { useGlobalContext } from "../components/Context";
 
-const Panier = ({ panier, setPanier }) => {
-  const magasin = panier;
-  const total = magasin
-    .reduce((acc, tot) => acc + tot.price * tot.amount, 0)
-    .toFixed(2);
+const Panier = () => {
+  const { panier, total } = useGlobalContext();
 
   const valider = () => {
     const data = {
-      Facture: panier,
+      Facture: [...panier],
       total: total,
     };
     axios.post("http://localhost:3002/panier/", data);
-    console.log(panier);
   };
 
   return (
@@ -27,17 +24,8 @@ const Panier = ({ panier, setPanier }) => {
       {panier.length > 0 ? (
         <>
           <ul className="article">
-            {magasin.map(({ id, name, pic, price, amount }) => (
-              <Article
-                id={id}
-                name={name}
-                pic={pic}
-                price={price}
-                amount={amount}
-                key={id}
-                panier={panier}
-                setPanier={setPanier}
-              />
+            {panier.map((item) => (
+              <Article {...item} key={item.id} />
             ))}
           </ul>
 

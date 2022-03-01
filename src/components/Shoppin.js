@@ -1,23 +1,14 @@
-// import axios from "axios";
-import React, { useState } from "react";
+import { useGlobalContext } from "../components/Context";
 
-const Shoppin = ({ id, name, pic, price, panier, setPanier }) => {
-  const [isEditing, setIsEditing] = useState(false);
+const Shoppin = ({ id, name, pic, price }) => {
+  const { panier, addTopanier, delTopanier } = useGlobalContext();
 
-  const addTopanier = (name, price, id, pic) => {
-    setIsEditing(true);
-    setPanier([...panier, { name, price, id, pic, amount: 1 }]);
-
-    const panierAdd = panier.find((e) => e.id === id);
-    if (panierAdd) {
-      const panierFilter = panier.filter((e) => e.id !== id);
-      setPanier([...panierFilter, { name, price, pic, id, amount: 1 }]);
+  const editing = (id) => {
+    if (panier.find((e) => e.id === id)) {
+      return true;
+    } else {
+      return false;
     }
-  };
-
-  const delTopanier = (id) => {
-    setIsEditing(false);
-    setPanier(panier.filter((e) => e.id !== id));
   };
 
   return (
@@ -31,18 +22,25 @@ const Shoppin = ({ id, name, pic, price, panier, setPanier }) => {
       </p>
 
       <div className="article-container__addminus">
-        <input type="checkbox" id={id} />
+        {/* <input type="checkbox" id={id} /> */}
 
-        <label htmlFor={id}>
+        {/* <label htmlFor={id}>
           <i className="fas fa-heart"></i>
-        </label>
+        </label> */}
 
-        {isEditing ? (
-          <i className="fas fa-check" onClick={() => delTopanier(id)}></i>
+        {editing(id) ? (
+          <i
+            className="fas fa-check"
+            onClick={() => {
+              delTopanier(id);
+            }}
+          ></i>
         ) : (
           <i
             className="fas fa-shopping-cart"
-            onClick={() => addTopanier(name, price, id, pic)}
+            onClick={() => {
+              addTopanier(name, price, id, pic);
+            }}
           ></i>
         )}
       </div>

@@ -21,6 +21,26 @@
       ],
       "total": "59.97",
       "id": 1
+    },
+    {
+      "Facture": [
+        {
+          "name": " Beige-pants",
+          "price": 19.99,
+          "id": "2",
+          "pic": "https://i.postimg.cc/Sjx4vnXG/pantalon.jpg",
+          "amount": 1
+        },
+        {
+          "name": " Browtop",
+          "price": 19.99,
+          "id": "1",
+          "pic": "https://i.postimg.cc/mzb4RDmB/haut.jpg",
+          "amount": 1
+        }
+      ],
+      "total": "39.98",
+      "id": 2
     }
   ]
 }

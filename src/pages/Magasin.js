@@ -1,24 +1,17 @@
 import Logo from "../components/Logo";
 import Navigation from "../components/Navigation";
 import Shoppin from "../components/Shoppin";
+import { newsData } from "../data/ArtcleData";
 
-const Magasin = ({ panier, setPanier, newsData }) => {
+const Magasin = () => {
   return (
     <div className="magasin">
       <Navigation />
       <h1>BOUTIQUE</h1>
       <Logo />
       <ul className="article">
-        {newsData.map(({ id, name, pic, price }) => (
-          <Shoppin
-            id={id}
-            name={name}
-            pic={pic}
-            price={price}
-            key={id}
-            panier={panier}
-            setPanier={setPanier}
-          />
+        {newsData.map((cart) => (
+          <Shoppin {...cart} key={cart.id} />
         ))}
       </ul>
     </div>

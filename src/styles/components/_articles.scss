@@ -6,10 +6,8 @@
   margin: 20px auto;
 
   .article-container {
-    // border: 1px solid black;
     position: relative;
     margin-bottom: 20px;
-    // width: calc(100% / 1 - 10px);
 
     h3 {
       padding-left: 50px;
@@ -26,16 +24,15 @@
       width: 200px;
       object-fit: cover;
       transition: transform 0.2s ease-in-out, opacity 0.1s ease-in;
-
-      @media (max-width: 1600px) {
-        margin: auto 60px;
-      }
+      margin: auto 60px;
+      // @media (max-width: 1600px) {
+      // }
     }
 
     p {
       padding: 5px;
       position: absolute;
-      top: 40px;
+      top: 38px;
       right: 55px;
       transform: scaleY(0);
       transform-origin: center top;
@@ -43,6 +40,12 @@
       background-color: $color-1;
       border-radius: 5px;
       color: $color-5;
+
+      @media (max-width: 1200px) {
+        transform: scaleY(1);
+        right: 65px;
+        top: 50px;
+      }
     }
 
     &__addminus {
@@ -50,32 +53,32 @@
       transform: translateX(50%);
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       margin-top: 10px;
 
-      input {
-        display: none;
+      // input {
+      //   display: none;
 
-        &:checked + label i {
-          color: $color-1;
-          animation: heart 0.8s forwards ease;
+      //   &:checked + label i {
+      //     color: $color-1;
+      //     animation: heart 0.8s forwards ease;
 
-          @keyframes heart {
-            0% {
-              filter: hue-rotate(0deg);
-              transform: scale(1);
-            }
-            50% {
-              filter: hue-rotate(-270deg);
-              transform: scale(1.2);
-            }
-            100% {
-              filter: hue-rotate(0deg);
-              transform: scale(1);
-            }
-          }
-        }
-      }
+      //     @keyframes heart {
+      //       0% {
+      //         filter: hue-rotate(0deg);
+      //         transform: scale(1);
+      //       }
+      //       50% {
+      //         filter: hue-rotate(-270deg);
+      //         transform: scale(1.2);
+      //       }
+      //       100% {
+      //         filter: hue-rotate(0deg);
+      //         transform: scale(1);
+      //       }
+      //     }
+      //   }
+      // }
 
       :is(p, i) {
         padding: 0px 10px;
@@ -84,6 +87,7 @@
       i {
         transition: 0.3s ease;
         font-size: 1.5em;
+        margin: auto 20px;
 
         &:hover {
           color: $color-1;
@@ -100,9 +104,11 @@
     }
 
     &:hover {
-      img {
-        transform: scale(1.1);
-        opacity: 0.9;
+      @media (min-width: 1200px) {
+        img {
+          transform: scale(1.1);
+          opacity: 0.9;
+        }
       }
 
       p {
