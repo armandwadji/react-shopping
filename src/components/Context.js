@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import reducer from "./reducer";
 
-const AppContext = React.createContext();
+const AppContext = React.createContext(); // creer pour mettre en place un state qui peut être appeler n'importe où dans toute l'application.
 
 const initialState = {
   panier: [],
@@ -46,6 +46,8 @@ const AppProvider = ({ children }) => {
     </AppContext.Provider>
   );
 };
+
+//hookCustom créer pour rendre le context global et facile à appleler grace à la destructuration et évité ainsi des doubles imports du genre {state}= useContext(AppContext)
 export const useGlobalContext = () => {
   return useContext(AppContext);
 };
