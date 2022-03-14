@@ -10,13 +10,12 @@ const Magasin = () => {
       <Navigation />
       <h1>BOUTIQUE</h1>
       <Logo />
-      <div className="product-center">
-        <ul className="article">
-          {newsData.map((cart) => (
-            <Shoppin {...cart} key={cart.id} />
-          ))}
-        </ul>
-      </div>
+
+      <ul className="article">
+        {newsData.map((cart) => (
+          <Shoppin {...cart} key={cart.id} />
+        ))}
+      </ul>
     </div>
   );
 };

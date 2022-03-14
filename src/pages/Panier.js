@@ -23,11 +23,13 @@ const Panier = () => {
       <Logo />
       {panier.length > 0 ? (
         <>
-          <ul className="article">
-            {panier.map((item) => (
-              <Article {...item} key={item.id} />
-            ))}
-          </ul>
+          <div className="product-center">
+            <ul className="article">
+              {panier.map((item) => (
+                <Article {...item} key={item.id} />
+              ))}
+            </ul>
+          </div>
 
           <p className="total-prices">
             Total Shopping : <span>{total}</span> €
