@@ -33,11 +33,6 @@ Une fois les dependances correctement installer, lancer enfin le projet grâce a
 ```
 npm start
 ```
-## Executer les tests
-
-```
-npm run test
-```
 
 <h1 align="center">Bon Code 🖥 💻 📱</h1>
 
