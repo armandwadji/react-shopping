@@ -1,6 +1,6 @@
 <div>
   <h1 align="center">
-    <a href="https://github.com/armandwadji/react-shopping.git">React Shopping 🛒
+    <a href="https://github.com/armandwadji/react-shopping.git">React Shopping 🛍 🛒
     </a>  
   </h1>
 </div> 
